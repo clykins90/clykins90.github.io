@@ -134,6 +134,11 @@ h3 {
     max-width: 100px;
     filter: brightness(0) invert(1);
 }
+.jobnimbus-logo{
+    max-height: 100px;
+    max-width: 100px;
+    filter: brightness(0) invert(1);
+}
 .skills-section {
     text-align: center;
 }
