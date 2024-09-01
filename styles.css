@@ -156,26 +156,21 @@ h3 {
     margin-top: 40px; /* Increased padding between sections */
     border-radius: 10px;
 }
-
 .contact-info p {
     margin: 5px 0;
 }
-
 .contact-info a {
     color: #bb86fc;
     text-decoration: none;
     transition: color 0.3s;
 }
-
 .contact-info a:hover {
     color: #fff;
 }
-
 @media (max-width: 768px) {
     .main-section {
         flex-direction: column;
     }
-
     .skills-list {
         flex-direction: column;
     }
