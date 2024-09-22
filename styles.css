@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital@1&family=Raleway:wght@400;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -113,32 +117,23 @@ h3 {
     margin-top: 40px; /* Increased padding between sections */
     border-radius: 10px;
 }
+
 .companies-section {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
+    padding: 0 10%;
 }
-.sling-tv-logo {
-    max-height: 75px;
-    max-width: 80px;
+
+.companies-section > img { 
+    object-fit: contain; 
+    max-width: 100%;
+    max-height: 100%;
     filter: brightness(0) invert(1);
 }
-.microsoft-logo {
-    max-height: 150px;
-    max-width: 150px;
-    filter: brightness(0) invert(1);
-}
-.discover-logo {
-    max-height: 100px;
-    max-width: 100px;
-    filter: brightness(0) invert(1);
-}
-.jobnimbus-logo{
-    max-height: 100px;
-    max-width: 100px;
-    filter: brightness(0) invert(1);
-}
+
 .skills-section {
     text-align: center;
 }
