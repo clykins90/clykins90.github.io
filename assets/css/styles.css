@@ -124,23 +124,32 @@ h3 {
     margin-top: 40px; /* Increased padding between sections */
     border-radius: 10px;
 }
-
-.companies-section {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /*justify-content: center;*/
-    justify-content: space-around;
-   /* align-items: center;*/
-    gap: 40px;
-    padding: 0 10%;
+.carousel-container {
+    .carousel-container {
+        display: flex;
+        align-items: center;
+        overflow: hidden; /* Hides images outside the container */
+        position: relative; /* For arrow positioning */
+        padding: 0 10%;
+    }
 }
 
-.companies-section > img { 
-    /*object-fit: contain; */
-    width: 100%;
-    height: 125px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
+.companies-section {
+    display: flex;
+    justify-content: space-around; /* Adjust spacing between items */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Add consistent space between images */
+    padding: 0 10%; /* Padding for the container */
+    flex-wrap: nowrap; /* Keep all items in a single row */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+.companies-section > img {
+    max-width: 125px; /* Fixed height for all images */
+    width: auto; /* Automatically scale the width to maintain aspect ratio */
+    object-fit: contain; /* Ensure the entire image fits without distortion */
+    filter: brightness(0) invert(1); /* Apply the desired filter */
+    flex-shrink: 0; /* Prevent images from shrinking too small */
 }
 
 .skills-section {
@@ -177,10 +186,31 @@ h3 {
     color: #fff;
 }
 @media (max-width: 768px) {
-    .main-section {
-        flex-direction: column;
+    .companies-section {
+        display: flex;
+        justify-content: center; /* Horizontally center the visible image */
+        align-items: center; /* Vertically center the image */
+        overflow: hidden; /* Prevent content overflow */
+        height: 125px; /* Match the height of the images */
+        width: 100%; /* Full width of the container */
+        padding: 0; /* Remove any padding */
+        margin: 0; /* Remove any margin */
+        box-sizing: border-box; /* Ensure padding/margin doesn't affect width */
+    }
+
+    .companies-section > img {
+        display: none; /* Hide all images by default */
+    }
+
+    .companies-section > img:first-child {
+        display: block; /* Show only the first image */
+        max-width: 125px; /* Keep the image width responsive */
+        max-height: 100%;
+        height: auto; /* Maintain aspect ratio */
+        object-fit: contain; /* Prevent distortion */
+        margin: 0 auto; /* Center the image horizontally */
     }
     .skills-list {
         flex-direction: column;
     }
-} 
+}
