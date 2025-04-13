@@ -1,0 +1,46 @@
+# Tailwind CSS Integration TODO
+
+- [x] **Set up Node.js Environment:**
+  - [x] Verify Node.js and npm/yarn are installed.
+  - [x] Create `package.json` (run `npm init -y` or `yarn init -y`).
+- [x] **Install Tailwind CSS Dependencies:**
+  - [x] Run `npm install -D tailwindcss postcss autoprefixer`.
+  - [x] Run `npm install -D postcss-cli`.
+  - [x] Run `npm install -D @tailwindcss/postcss`.
+- [x] **Configure Tailwind (v4 PostCSS approach):**
+  - [x] Create/Update `postcss.config.js` to use `@tailwindcss/postcss` plugin.
+  - [ ] `tailwind.config.js` is not strictly required for basic setup in v4, but can be added later for customization (using `npx tailwindcss init`).
+- [x] **Create Input CSS:**
+  - [x] Create `assets/css/input.css`.
+  - [x] Add Tailwind directives: `@tailwind base;`, `@tailwind components;`, `@tailwind utilities;`.
+  (Alternatively, use `@import "tailwindcss";` as per v4 docs).
+- [x] **Set up Build Process:**
+  - [x] Add build script to `package.json` `scripts`: e.g., `"build:css": "postcss ./assets/css/input.css -o ./assets/css/styles.css --watch"` (using PostCSS CLI).
+  - [ ] Consider adding a production build script (`--minify` or configure PostCSS env).
+- [x] **Integrate with Jekyll:**
+  - [x] Update `_layouts/default.html` to link `<link rel="stylesheet" href="/assets/css/styles.css">`. (Verified path is correct).
+  - [x] Determine how to run the CSS build alongside `jekyll serve` / `jekyll build`. (Run both `npm run build:css --watch` and `jekyll serve` concurrently in separate terminals).
+- [x] **Refactor HTML with Tailwind Classes:**
+  - [x] Start with `_layouts/default.html`.
+  - [x] Refactor `_includes/navbar.html`.
+  - [x] Refactor `index.html`.
+  - [x] Refactor `about.markdown`. (No custom HTML found, N/A for now).
+  - [x] Remove old styles from original `assets/css/styles.css`.
+- [x] **Create `projects.html`:**
+  - [x] Create the file `projects.html`.
+  - [x] Add basic structure using `default` layout.
+  - [x] Use Tailwind classes for layout and styling.
+- [ ] **Add GitHub Link:**
+  - [ ] Edit `_includes/navbar.html`.
+  - [ ] Add link with text and potentially a GitHub icon.
+  - [ ] Style using Tailwind classes.
+- [x] **Refine Color Palette & Styling:**
+  - [x] Create `tailwind.config.js` if needed for customization (`npx tailwindcss init`).
+  - [x] Update `tailwind.config.js` `content` array.
+  - [x] Update `tailwind.config.js` `theme.extend.colors`.
+  - [ ] Apply spacing, layout adjustments, etc., using Tailwind utilities.
+- [ ] **Set up GitHub Actions for Deployment:**
+  - [ ] Create `.github/workflows/deploy.yml`.
+  - [ ] Configure workflow to checkout, setup Ruby, setup Node, install deps, build CSS, build Jekyll.
+  - [ ] Use `actions/deploy-pages` to deploy `_site` folder.
+  - [ ] Update repository settings to deploy from Actions. 
